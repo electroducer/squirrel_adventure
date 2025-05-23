@@ -3,7 +3,7 @@ import streamlit as st
 st.title("Your Adventure Game")
 
 def start():
-    name = st.text_input("What is your character's name?")
+    name = st.text_input("What is your character's name?", key="name")
     if name:
         st.write("Hello, ", name, "!")
         st.write(f"One day, {name} was walking through the forest. She saw a squirrel.")
@@ -23,7 +23,8 @@ def start():
                 st.write(f'{name} ignored the squirrel but the squirrel wanted attention so he bit her.')
             bite(name)
     if st.button("Reset"):
-        name = None
+        st.session_state.name = ""
+        name=""
 
 def bite(name):
     st.write("OUCH!!!!")
