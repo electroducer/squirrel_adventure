@@ -3,6 +3,9 @@ import streamlit as st
 st.title("Your Adventure Game")
 
 def start():
+    for key in ["name"]:
+        if key not in st.session_state:
+            st.session_state[key] = ""
     name = st.text_input("What is your character's name?", key="name")
     if name:
         st.write("Hello, ", name, "!")
