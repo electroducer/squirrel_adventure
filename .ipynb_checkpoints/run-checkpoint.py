@@ -22,6 +22,8 @@ def start():
             else:
                 st.write(f'{name} ignored the squirrel but the squirrel wanted attention so he bit her.')
             bite(name)
+    if st.button("Reset"):
+        name = ""
 
 def bite(name):
     st.write("OUCH!!!!")
