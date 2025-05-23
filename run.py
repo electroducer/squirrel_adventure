@@ -4,23 +4,24 @@ st.title("Your Adventure Game")
 
 def start():
     name = st.text_input("What is your character's name?")
-    st.write("Hello, ", name, "!")
-    st.write(f"One day, {name} was walking through the forest. She saw a squirrel.")
-    answer = st.text_input("""Did she:
-                      1. Scream and run away
-                      2. Try to pet the squirrel
-                      3. Ignore it
-                    """)
-    if answer == "1":
-        st.write("She ran away and screamed. AHHHHHHHHH!!!!")
-        st.write("After that she was so scared that she couldn't continue the adventure.")
-        st.write("========!!!THE END!!!========")
-    elif answer == "2" or answer == "3":
-        if answer == "2":
-            st.write(f'{name} tried to pet the squirrel. But then the squirrel bit her.')
-        else:
-            st.write(f'{name} ignored the squirrel but the squirrel wanted attention so he bit her.')
-        bite(name)
+    if name:
+        st.write("Hello, ", name, "!")
+        st.write(f"One day, {name} was walking through the forest. She saw a squirrel.")
+        answer = st.text_input("""Did she:
+                          1. Scream and run away
+                          2. Try to pet the squirrel
+                          3. Ignore it
+                        """)
+        if answer == "1":
+            st.write("She ran away and screamed. AHHHHHHHHH!!!!")
+            st.write("After that she was so scared that she couldn't continue the adventure.")
+            st.write("========!!!THE END!!!========")
+        elif answer == "2" or answer == "3":
+            if answer == "2":
+                st.write(f'{name} tried to pet the squirrel. But then the squirrel bit her.')
+            else:
+                st.write(f'{name} ignored the squirrel but the squirrel wanted attention so he bit her.')
+            bite(name)
 
 def bite(name):
     st.write("OUCH!!!!")
