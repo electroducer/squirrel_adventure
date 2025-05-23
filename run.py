@@ -26,8 +26,8 @@ def start():
                 st.write(f'{name} ignored the squirrel but the squirrel wanted attention so he bit her.')
             bite(name)
     if st.button("Reset"):
-        st.session_state.name = ""
-        name=""
+        st.session_state["name"] = ""
+        name = ""
 
 def bite(name):
     st.write("OUCH!!!!")
